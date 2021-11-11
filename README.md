@@ -1,10 +1,6 @@
 # Asset Manager project
 
-This project was created to practice my full stack skills.
-
-It is run locally.
-
-# Prerequisites
+#### Prerequisites
 install Node.js: https://nodejs.org/en/download/
 Angular Framework: npm i @angular/cli
 PostgreSQL: https://www.postgresql.org/download/
