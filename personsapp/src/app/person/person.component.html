@@ -1,0 +1,119 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-7">
+      <h1 class="m-3">
+        Persons
+      </h1>
+      <div class="m-3">
+        <table class="table table-bordered">
+          <tr>
+            <th>
+              Id
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Year
+            </th>
+            <th>
+              Hobby
+            </th>
+            <th>
+              Action
+            </th>
+          </tr>
+          <tr *ngFor="let person of persons">
+            <td>
+              {{ person.id }}
+            </td>
+            <td>
+              {{ person.name }}
+            </td>
+            <td>
+              {{ person.dob }}
+            </td>
+            <td>
+              {{ person.hobby }}
+            </td>
+            <td>
+              <button class="btn btn-outline-danger" (click)="deletePerson(person.id)">
+                Delete
+              </button>
+              <button class="btn btn-outline-primary" (click)="editPerson(person.id, person.name, person.dob, person.hobby, person.assets)">
+                Edit
+              </button>
+              <button class="btn btn-outline-success" (click)="showAssets(person)">
+                Assets
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <div>
+          <input type="text" [(ngModel)]="newPerson.name" placeholder="Name">
+        </div>
+        <div>
+          <input type="number" [(ngModel)]="newPerson.dob" placeholder="Birth date">
+        </div>
+        <div>
+          <input type="text" [(ngModel)]="newPerson.hobby" placeholder="Hobby">
+        </div>
+        <div>
+          <button class="btn btn-primary" (click)="createPerson()">
+            {{ buttonString }}
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="assets">
+        <div>
+          <h1 class="m-3">
+            Assets of {{ assetHolder.name }}
+          </h1>
+          <div class="m-3">
+            <table class="table table-bordered">
+              <tr>
+                <th>
+                  Asset Name
+                </th>
+                <th>
+                  Amount
+                </th>
+              </tr>
+              <tr *ngFor="let asset of assetHolder.assets">
+                <td>
+                  {{ asset.name }}
+                </td>
+                <td>
+                  {{ asset.amount }}
+                </td>
+                <td>
+                  <button class="btn btn-outline-danger" (click)="deleteAsset(asset.id)">
+                    Remove asset
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <button class="btn btn-secondary" (click)="hideAssets()">
+              Hide assets
+            </button>
+          </div>
+        </div>
+        <div class="m-3">
+          <div>
+            <input type="text" placeholder="Asset name" [(ngModel)]="newAsset.name">
+          </div>
+          <div>
+            <input type="number" placeholder="Amount" [(ngModel)]="newAsset.amount">
+          </div>
+          <div>
+            <button class="btn btn-primary" (click)="createAsset()">
+              Add asset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
