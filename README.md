@@ -11,7 +11,7 @@ PostgreSQL: https://www.postgresql.org/download/
 Scala sbt: https://www.scala-sbt.org/download.html
 
 The repository includes two projects and a database: 
-personapp is a Frontend application that is run with -ng serve. The app is run on port 4200 by default. Run application in a browser developer mode.
+personapp is a Frontend application that is run with -ng serve. The app is run on port 4200 by default. Open application in a browser developer mode.
 personlist is a Backend application that is run with -sbt run. The app is run on port 9000 by default.
 The database is on port 5432 by default.
 
