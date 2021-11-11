@@ -19,3 +19,5 @@
 /*.iml
 .classpath
 .project
+
+personsapp/node_modules
