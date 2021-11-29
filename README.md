@@ -20,3 +20,5 @@ In tables section create another table and name it tassets. It should have 4 col
 vname (type: character varying, length: 50), namount (type: numeric, length: 20)
 
 In personlist/conf/application.conf file in lines 368-371 set up your database parameters.
+
+Rub backend with sbt run command and frontend with ng serve
